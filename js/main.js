@@ -14,8 +14,10 @@ async function viewProducts(){
         section.id = category;
         console.log(category);
         section.innerHTML = `   
-            <h2 class = "h2">${capitalizeFirstLetter(category)}</h2>
-            <a class = "mx-4"><strong >see more</strong></a>           
+            <div class="d-flex align-items-center mb-3">
+                <h2 class="h3 m-0 text-primary">${capitalizeFirstLetter(category)}</h2>
+                <a href="#" class="text-decoration-none ms-5 fw-semibold text-primary see-more-link">See more &rarr;</a>
+            </div>          
             <div class="row p-4">
                 ${products.slice(1,5).map(product => `
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 align-items-stretch">
@@ -75,7 +77,7 @@ function displayCurrentProducts(category){
     let section = document.createElement("section");
     section.classList.add("container-fluid", "p-3"); 
     section.innerHTML = `
-        <a class = "h2" href = "#"> ${capitalizeFirstLetter(category)}</a>
+        <h2 class="h3 m-0 text-primary">${capitalizeFirstLetter(category)}</h2>
         <div class="row p-4">
             ${currentDisplayed.map(product => `
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 align-items-stretch">
