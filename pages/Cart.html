@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h1 class="cart-title">Cart</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">Add New Product</div>
+        <div class="card-body">
+            <form id="productForm" class="row g-3">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="productName" placeholder="Product Name">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="productPrice" placeholder="Price" min="0">
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control" id="productQuantity" placeholder="Quantity" min="0">
+                </div>
+                <div class="col-md-3">
+                    <input type="file" class="form-control" id="productImg">
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button id="buttonAdd" class="btn btn-success">Add Product</button>
+                    <button id="buttonUpdate" class="btn btn-warning d-none mt-2">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+ 
+    <table class="table table-bordered text-center align-middle">
+        <thead class="table-light">
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Update</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody id="cartBody"> 
+           
+        </tbody>
+    </table>
+
+    <div class="coupon row border p-3 mb-4 align-items-center">
+        <div class="coupon-section col-md-6 mb-2">
+            <input type="text" class="form-control" placeholder="Coupon code">
+        </div>
+        <div class="col-md-6 mb-2">
+            <button class="btn btn-primary w-100">APPLY COUPON</button>
+        </div>
+    </div>
+    
+    <div class="row justify-content-end">
+        <div class="col-md-4">
+            <div class="cart-totals">
+                <h5>Cart totals</h5>
+                <table class="table">
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="subtotal">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total">$0.00</td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary checkout-btn">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script> 
+<script src="../js/script.js"></script>
+</body>
+</html>
