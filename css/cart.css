@@ -1,0 +1,40 @@
+
+body {
+    background-color: #f8f9fa;
+}
+.cart-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #444;
+}
+.table img {
+    width: 60px;
+    height: auto;
+}
+.coupon-section input {
+    width: 200px;
+    display: inline-block;
+}
+.coupon-section button {
+    margin-left: 10px;
+}
+.cart-totals {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.cart-totals h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+} 
+.coupon{
+    width:30%;
+}
