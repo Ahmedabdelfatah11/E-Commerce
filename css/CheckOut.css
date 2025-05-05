@@ -134,3 +134,29 @@ form span a:hover
     width: 150px;
     margin-left: 10px;
 }
+
+#orderConfirmation p
+{
+    font-size: 22px;
+}
+table 
+{
+    font-size: 25px;
+}
+footer
+{
+    background-color: #f1eeee;
+}
+footer ul,h5,h6
+{
+    font-size: 23px;
+}
+footer .list-unstyled li a
+{
+    transition: all .4s;
+    color: black;
+}
+footer .list-unstyled li a:hover
+{
+    color: rgb(57, 57, 206);
+}

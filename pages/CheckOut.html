@@ -10,10 +10,47 @@
     <link rel="stylesheet" href="/css/media.css">
 </head>
 <body>
-    <section>
-        <div class="Header w-100 text-center">
-        <h2 class="text-muted fw-bold">CheckOut</h2>
-      </div>
+
+    <section> 
+        <!-- navbar Section --> 
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">UltraWave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    All Products
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("audio")'>Audio</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("gaming")'>Gaming</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("mobile")'>Mobile</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("tv")'>TV</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              <!-- start cart --> 
+              <a href="/pages/Cart.html" class="btn btn-primary position-relative ms-2">
+              <i class="fa fa-shopping-cart"></i> Cart
+              <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+              </a>
+              <!-- end cart --> 
+    </section>
+    <div class="Header w-100 text-center">
+    <h2 class="text-muted fw-bold">CheckOut</h2>
+  </div>
+    <section id="HeaderDetails" class="d-none">
       <div class="HeaderBody  m-auto d-flex p-3 bilingBody">
         <span><i class="fa-solid fa-dumpster "></i></span> 
         <span class="text-muted ms-3 me-2">Returning customer?</span>
@@ -29,16 +66,19 @@
                 <div class="d-lg-flex justify-content-md-between">
                     <div class="inputBody">
                 <label for="" class="my-2">Username or email <span class="text-danger">*</span></label>
-                <input type="email" name="" id="userNameEmailLogin" class="form-control p-2">
+                <input type="text" name="" id="userNameEmailLogin" class="form-control p-2">
             </div>
                     <div class="inputBody">
                 <label for=""  class="my-2">Password <span class="text-danger">*</span></label>
                 <input type="password" name="" id="loginPasswrod" class="form-control p-2">
             </div>
                 </div>
-                <button class="btn btn-info mt-5 p-3 px-4" type="submit">Login</button>
+                <button class="btn btn-info mt-5 p-3 px-4" type="submit" id="loginBtn">Login</button>
                 <br>
-                <span> <a href="">Lost your password</a></span>
+                <h4 id="required" class="d-none "><span style="color: #dc3545 ;"> All inputs is required</span></h4>
+                <h4 id="Incorrect" class="d-none "><span style="color: #dc3545 ;"> incorrect email or password</span></h4>
+                <h4 id="success" class="d-none"><span style="color:green ;"> Success</span></h4>
+
             </form>
         </div>
       </div>
@@ -66,26 +106,32 @@
           </div>
         </div>
     </section>
-    <section>
+    <section class="mb-5">
 
         <div class="container-fluid">
             <div class="row mx-auto bilingBody ">
-                <div class="col-lg-6 bilingBodyDetail mx-2">
+                <div class="col-lg-6 bilingBodyDetail mx-2" id="BilingDetails">
                     <h2 class="border-bottom pb-3">Billing details</h2>
                     <form action="">
                         <div class="d-flex justify-content-between">
                             <div class="bilingBodyFirst ">
-                        <label for="" class="my-2">Username or email <span class="text-danger">*</span></label>
-                        <input type="email" name="" id="userNameEmail" class="form-control p-2" required>
+                        <label for="" class="my-2">FirstName<span class="text-danger">*</span></label>
+                        <input type="text" name="" id="userNameRege" class="form-control p-2" required>
+                        <div class="alert alert-danger d-none"id="userNameAlert" role="alert">
+                            Please Enter a vaild userName with more than 4 chars
+                          </div>
                     </div>
                             <div class="bilingBodyFirst">
-                        <label for=""  class="my-2">Password <span class="text-danger">*</span></label>
-                        <input type="password" name="" id="password" class="form-control p-2" required>
+                        <label for=""  class="my-2">LastName <span class="text-danger">*</span></label>
+                        <input type="text" name="" id="LastName" class="form-control p-2" required>
+                        <div class="alert alert-danger d-none"id="userLastNameAlert" role="alert">
+                            Please Enter A valid Last Name
+                          </div>
                     </div>
                         </div>
                         <div class="bilingBody w-100">
                             <label for="" class="my-2">Company name (optional)</label>
-                        <input type="text" name="" id="companyName" class="form-control p-2" required>
+                        <input type="text" name="" id="companyName" class="form-control p-2" >
                     </div>
                         <div class="bilingBody w-100">
                             <label for="" class="my-2">Country / Region <span class="text-danger">*</span></label>
@@ -348,20 +394,32 @@
                         <div class="bilingBody w-100">
                             <label for="" class="my-2">Street address <span class="text-danger">*</span></label>
                         <input type="text" name="streetName" placeholder="House number and street name" id="streetName" class="form-control p-2 mb-3" required>
+                        <div class="alert alert-danger d-none "id="userStreetAlert" role="alert">
+                           Please Enter A correct street
+                          </div>
                         <input type="text" name="apartment" placeholder="Apartment, suite, unit, etc. (optional)" id="apartment" class="form-control p-2" >
                     </div>
                     <div class="bilingBody w-100">
                         <label for="" class="my-2">Town / City <span class="text-danger">*</span></label>
                     <input type="text" name="" id="town" class="form-control p-2" required>
+                    <div class="alert alert-danger d-none"id="userTownAlert" role="alert">
+                        Please Enter A correct City
+                      </div>
                 </div>
                     <div class="bilingBody w-100">
                         <label for="" class="my-2">Phone<span class="text-danger">*</span></label>
-                    <input type="number" name="phone" id="phone" class="form-control p-2" required>
+                    <input type="number" name="phone" id="phone" class="form-control p-2" placeholder="+20" required>
+                    <div class="alert alert-danger d-none" id="userPhoneAlert" role="alert">
+                       Please Enter A valid Number
+                      </div>
                 </div>
-                    <div class="bilingBody w-100">
-                        <label for="" class="my-2">Email address<span class="text-danger">*</span></label>
-                    <input type="email" name="emailAddress" id="emailAddress" class="form-control p-2" required>
-                </div>
+                <div class="bilingBodyFirst ">
+                    <label for="" class="my-2">Username or email <span class="text-danger">*</span></label>
+                    <input type="email" name="" id="userEmailRege" class="form-control p-2" required>
+                    <div class="alert alert-danger d-none"id="userEmailAlert" role="alert">
+                        Please Enter a vaild userEmail with more than 4 chars
+                    </div>
+                    </div>
                     <div class="bilingBody w-100">
                         <label for="" class="my-2">Additional information</label>
                         <div class="mb-3 textAreaDiv">
@@ -370,32 +428,17 @@
                         </div>
                         
                 </div>
+                <h4 id="success" class="d-none"><span style="color:green ;"> Success</span></h4>
+                <h4 id="exists" class="d-none"><span style="color: #dc3545 ;"> email Or UserName is already exists</span></h4>
+
                     </form>
                     
                 </div>
-                <div class="col-lg-6 bilingBodyDetail bilingBorder">
+                <div class="col-lg-6 bilingBodyDetail bilingBorder " id="orderDetails">
                     <h2 class=" p-4">Your Order</h2>
-                    <div>
-                        <div class="px-4 d-flex justify-content-between border-bottom">
-                            <h3 class="pb-2">product</h3>
-                            <h3 class="pb-2">Subtotal</h3>
-                        </div>
-                        <div class="px-4 d-flex justify-content-between mt-3 border-bottom">
-                            <p>Dark Brown Jeans × 8</p>
-                            <p>$1,200.00</p>
-                        </div>
-                        <div class="px-4 d-flex justify-content-between mt-3 border-bottom">
-                            <p>Dark Brown Jeans × 8</p>
-                            <p>$1,200.00</p>
-                        </div>
-                        <div class="px-4 d-flex justify-content-between mt-3 border-bottom">
-                            <p>Dark Brown Jeans × 8</p>
-                            <p>$1,200.00</p>
-                        </div>
-                        <div class="px-4 d-flex justify-content-between mt-3 border-bottom">
-                            <p>Dark Brown Jeans × 8</p>
-                            <p>$1,200.00</p>
-                        </div>
+                    <div id="orderTable">
+                       
+                        
                         
                     </div>
                    
@@ -438,12 +481,114 @@
                                 </div>
                             </div>
                         </form>
+                        <button class="btn btn-outline-info w-25 mx-auto mb-3 " type="submit" id="confirmOrder" >Confirm Order</button>
+                    </div>
+                </div>
+                <div class="col-lg-12 w-75 d-none" id="orderConfirmation">
+                    <p class="fw-bolder">Thank you. Your order has been received.</p>
+                    <br>
+                    <div class="d-flex">
+                        <div class="border-end me-3 pe-3">
+                            <p>Order number:</p>
+                            <p id="orderNumber"></p>
+                        </div>
+                        <div class="border-end me-3 pe-3">
+                            <p>Date:</p>
+                            <p id="DateTime"></p>
+                        </div>
+                        <div class="border-end me-3 pe-3">
+                            <p>Total:</p>
+                            <p id="Total"></p>
+                        </div>
+                        <div class="border-end me-3 pe-3">
+                            <p>Payment method:</p>
+                            <p id="paymentMethod"></p>
+                        </div>
+                    </div>
+                    <div class="w-100 mt-5">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">Order details</th>                                
+                              </tr>
+                            </thead>
+                            <tbody id="tableDetails">
+                            
+                            
+                             
+                            </tbody>
+                          </table>
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+   
+    <footer class="px-5">
+        <div class="container-fluid  mt-2 py-5">
+        <div class="row">
+          <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+            <h5 class="">The best look anytime, anywhere</h5>
+          </div>
+          <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3"><h6>For Her</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class=" text-decoration-none">Women Jeans</a></li>
+              <li><a href="#" class=" text-decoration-none py-3">Tops and Shirts</a></li>
+              <li><a href="#" class=" text-decoration-none">Women Jackets</a></li>
+              <li><a href="#" class=" text-decoration-none py-3">Heels and Flats</a></li>
+              <li><a href="#" class=" text-decoration-none">Women Accessories</a></li>
+           
+            </ul>
+      
+          </div>
+          <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+            <h6>For Him</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class=" text-decoration-none">Men Jeans</a></li>
+              <li><a href="#" class=" text-decoration-none">Men Shirts</a></li>
+              <li><a href="#" class=" text-decoration-none">Men Shoes</a></li>
+              <li><a href="#" class=" text-decoration-none">Men Accessories</a></li>
+              <li><a href="#" class=" text-decoration-none">Men Jackets</a></li>
+           
+            </ul>
+          </div>
+          <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+            <h6>Subscribe</h6>
+            <form>
+              <div class="mb-3 ">
+                
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+               
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+      
+          </div>
+        </div>
+      </div>
+      <hr>
+      
+      <div class="container">
+        <div class="row">
+         <div class="col-6">Copyright © 2025 Brandstore. Powered by ITI.</div>
+         <div class="col-6 " style="font-size: 20px;">
+      
+          <i class="bi bi-facebook px-3"></i>
+          <i class="bi bi-youtube px-3"></i>
+          <i class="bi bi-twitter px-3"></i>
+          <i class="bi bi-instagram px-3"></i>
+          <i class="bi bi-google px-3"></i>
+         </div>
+        </div>
+        
+      
+      </div>
+      </footer>
     <script src="/js/CheckOut.js"></script>
+    <script src="/js/CartCounter.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>

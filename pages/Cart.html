@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/cart.css">
+
+</head>
+
+<body>
+    <section> 
+        <!-- navbar Section --> 
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">UltraWave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    All Products
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("audio")'>Audio</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("gaming")'>Gaming</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("mobile")'>Mobile</a></li>
+                    <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("tv")'>TV</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              <!-- start cart --> 
+              <a href="pages/Cart.html" class="btn btn-primary position-relative ms-2">
+              <i class="fa fa-shopping-cart"></i> Cart
+              <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+              </a>
+              <!-- end cart --> 
+    </section>
+  <section>
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h1 class="cart-title">Cart</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">Add New Product</div>
+        <div class="card-body">
+            <form id="productForm" class="row g-3">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="productName" placeholder="Product Name">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="productPrice" placeholder="Price" min="0">
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control" id="productQuantity" placeholder="Quantity" min="0">
+                </div>
+                <div class="col-md-3">
+                    <input type="file" class="form-control" id="productImg">
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button id="buttonAdd" class="btn btn-success">Add Product</button>
+                    <button id="buttonUpdate" class="btn btn-warning d-none mt-2">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+ 
+    <table class="table table-bordered text-center align-middle">
+        <thead class="table-light">
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Update</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody id="cartBody"> 
+           
+        </tbody>
+    </table>
+
+    <div class="coupon row border p-3 mb-4 align-items-center">
+        <div class="coupon-section col-md-6 mb-2">
+            <input type="text" class="form-control" placeholder="Coupon code">
+        </div>
+        <div class="col-md-6 mb-2">
+            <button class="btn btn-primary w-100">APPLY COUPON</button>
+        </div>
+    </div>
+    
+    <div class="row justify-content-end">
+        <div class="col-md-4">
+            <div class="cart-totals">
+                <h5>Cart totals</h5>
+                <table class="table">
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="subtotal">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total">$0.00</td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary checkout-btn"><a href="CheckOut.html" id="checkoutAnc">CHECKOUT</a> </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer class="px-5 mt-5">
+    <div class="container-fluid  mt-2 py-5">
+    <div class="row">
+      <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+        <h5 class="">The best look anytime, anywhere</h5>
+      </div>
+      <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3"><h6>For Her</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class=" text-decoration-none">Women Jeans</a></li>
+          <li><a href="#" class=" text-decoration-none py-3">Tops and Shirts</a></li>
+          <li><a href="#" class=" text-decoration-none">Women Jackets</a></li>
+          <li><a href="#" class=" text-decoration-none py-3">Heels and Flats</a></li>
+          <li><a href="#" class=" text-decoration-none">Women Accessories</a></li>
+       
+        </ul>
+  
+      </div>
+      <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+        <h6>For Him</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class=" text-decoration-none">Men Jeans</a></li>
+          <li><a href="#" class=" text-decoration-none">Men Shirts</a></li>
+          <li><a href="#" class=" text-decoration-none">Men Shoes</a></li>
+          <li><a href="#" class=" text-decoration-none">Men Accessories</a></li>
+          <li><a href="#" class=" text-decoration-none">Men Jackets</a></li>
+       
+        </ul>
+      </div>
+      <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+        <h6>Subscribe</h6>
+        <form>
+          <div class="mb-3 ">
+            
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+           
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+  
+      </div>
+    </div>
+  </div>
+  <hr>
+  
+  <div class="container">
+    <div class="row">
+     <div class="col-6">Copyright © 2025 Brandstore. Powered by ITI.</div>
+     <div class="col-6 " style="font-size: 20px;">
+  
+      <i class="bi bi-facebook px-3"></i>
+      <i class="bi bi-youtube px-3"></i>
+      <i class="bi bi-twitter px-3"></i>
+      <i class="bi bi-instagram px-3"></i>
+      <i class="bi bi-google px-3"></i>
+     </div>
+    </div>
+    
+  
+  </div>
+  </footer>
+<script src="/js/bootstrap.bundle.min.js" ></script> 
+<script src="/js/cart.js"></script>
+<script src="/js/CartCounter.js"></script> 
+</body>
+</html>
