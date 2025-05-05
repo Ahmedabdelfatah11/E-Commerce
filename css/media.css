@@ -1,0 +1,117 @@
+@media screen  and (max-width:599px){
+    .inputBody
+    {
+        width: 100% !important;
+    }
+    .bilingBody
+    {
+        width: 92% !important;
+    }
+    .bilingBodyDetail
+    {
+        width: 100% !important;
+    }
+    .Headphone
+    {
+        font-size: .3em;
+    }
+    .hero-section
+{
+    width: 93vw;
+    margin-inline:auto ;
+    padding-inline: 2rem;
+    background-color: rgb(205, 201, 201);
+    border-radius: 2rem;
+    padding-top: 1rem;
+}
+.lineheight2{line-height: var(--line2,3rem)}
+.hero-inner h4
+{
+    font-size: 18px;
+}
+
+.hero-inner p
+{
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+    
+}
+@media screen  and (min-width:600px) and (max-width:768px){
+    .inputBody
+    {
+        width: 100% !important;
+    }
+    .bilingBody
+    {
+        width: 92% !important;
+    }
+    .bilingBodyDetail
+    {
+        width: 100%;
+    }
+    .Headphone
+    {
+        font-size: 2em;
+    }
+    .hero-section
+{
+    width: 93vw;
+    margin-inline:auto ;
+    padding-inline: 2rem;
+    background-color: rgb(205, 201, 201);
+    border-radius: 2rem;
+    padding-top: 1rem;
+}
+.lineheight2{line-height: var(--line2,4rem)}
+.hero-inner h4
+{
+    font-size: 23px;
+}
+
+.hero-inner p
+{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+}
+
+@media screen  and (min-width:769px) and (max-width:991px){
+    .inputBody
+    {
+        width: 100%;
+    }
+    .bilingBody
+    {
+        width: 92% !important;
+    }
+    .bilingBodyDetail
+    {
+        width: 100%;
+    }
+    .Headphone
+    {
+        font-size: 3em;
+    }
+    .hero-section
+{
+    width: 93vw;
+    margin-inline:auto ;
+    padding-inline: 2rem;
+    background-color: rgb(205, 201, 201);
+    border-radius: 2rem;
+    padding-top: 1rem;
+}
+.lineheight2{line-height: var(--line2,6rem)}
+
+}
+@media screen  and (min-width:992px) and (max-width:1200px){
+    .bilingBodyDetail
+    {
+        width: 100%;
+    }
+    .Headphone
+    {
+        font-size: 3em;
+    }
+}

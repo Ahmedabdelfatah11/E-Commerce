@@ -1,0 +1,162 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    background-color: #f5f7f9;
+}
+
+
+.Header h2
+{
+    font-size: 40px;
+    margin: 50px;
+}
+.HeaderBody 
+{
+    width: 90%;
+    margin:50px auto;
+    border-top: solid 3px black;
+}
+.HeaderBody span
+{
+    font-size: 20px;
+}
+.HeaderBody a
+{
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease-in-out;
+}
+.HeaderBody a:hover
+{
+    color: rgb(7, 164, 226);
+}
+
+.collapseBody
+{
+    width: 90%;
+    margin: auto;
+}
+.card p
+{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#userNameEmailLogin,#password,#loginPasswrod,#userNameEmail,#companyName,#streetName,#apartment,#town,#phone,#emailAddress
+{
+    box-shadow: none;
+    border-color:#ced4da;
+}
+.inputBody
+{
+    width: 47% !important;
+}
+.inputBody label 
+{
+    font-size: 18px;
+    font-weight: 600;
+}
+.bilingBodyFirst
+{
+    width: 47%;
+}
+.bilingBody label
+{
+    font-size: 18px;
+    font-weight: 600;
+}
+form span a
+{
+    text-decoration: none;
+    color: black;
+    transition: all .3s;
+}
+form span a:hover
+{
+    color: rgb(7, 164, 226);
+}
+
+#couponBtn
+{
+    width: 200px;
+}
+.bilingBody
+{
+    width: 75% ;
+}
+.textAreaDiv
+{
+    border-top: solid 1px #ced4da;
+}
+.textAreaDiv
+{
+    font-size: 14px;
+    font-weight: 400;
+}
+.bilingBorder
+{
+    border: solid 1px #ced4da;
+}
+.bilingBorder h2
+{
+    font-size: 25px;
+    color: black;
+}
+.bilingBody h3
+{
+    font-size: 20px;
+}
+.bilingBodyDetail
+{
+    width: 47%;
+}
+.bilingBodyDetail .card
+{
+    background-color: #efefef !important;
+    border: none;
+}
+.payment-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 8px;
+    transition: all .5s;
+}
+.payment-description {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #efefef;
+    display: none; /* Hidden by default */
+}
+.payment-logo {
+    width: 150px;
+    margin-left: 10px;
+}
+
+#orderConfirmation p
+{
+    font-size: 22px;
+}
+table 
+{
+    font-size: 25px;
+}
+footer
+{
+    background-color: #f1eeee;
+}
+footer ul,h5,h6
+{
+    font-size: 23px;
+}
+footer .list-unstyled li a
+{
+    transition: all .4s;
+    color: black;
+}
+footer .list-unstyled li a:hover
+{
+    color: rgb(57, 57, 206);
+}
