@@ -8,6 +8,13 @@
     margin: 0;
     padding: 0;
 } */
+html {
+    scroll-behavior: smooth;
+  }
+  
+ #header{
+    background-image: src("../imgs");
+ }
  .navbar
  {
     z-index: 9999;
@@ -25,7 +32,7 @@
     padding-inline: 2rem;
     background-color: rgb(205, 201, 201);
     border-radius: 2rem;
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
 }
 .hero-inner h4
 {
@@ -37,10 +44,10 @@
     font-size: 25px;
     margin-bottom: 25px;
 }
-#homeSec
+/* #homeSec
 {
     margin-top: 80px;
-}
+} */
 .upperCase
 {
     text-transform: uppercase;

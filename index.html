@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-    <header class="container-fluid bg-secondary p-4 hero  mb-2">
+    <header id="header" class="container-fluid p-4 hero ">
       
       <!-- navbar Section --> 
       <nav class="navbar navbar-expand-md fixed-top">
@@ -29,10 +29,10 @@
                   All Products
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("audio")'>Audio</a></li>
-                  <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("gaming")'>Gaming</a></li>
-                  <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("mobile")'>Mobile</a></li>
-                  <li><a class="dropdown-item" href="#" onclick='displayCategoryProducts("tv")'>TV</a></li>
+                  <li><a class="dropdown-item" href="#audio" >Audio</a></li>
+                  <li><a class="dropdown-item" href="#gaming" >Gaming</a></li>
+                  <li><a class="dropdown-item" href="#mobile" >Mobile</a></li>
+                  <li><a class="dropdown-item" href="#tv">TV</a></li>
                 </ul>
               </li>
             </ul>
@@ -59,7 +59,7 @@
            </div>
          </div> -->
          <section id="homeSec">
-          <div class="hero-section mt-5">
+          <div class="hero-section w-100 ">
           <div>
          <h1 class="fs-200 fs-poppins upperCase fw-bolder">Beats Solo <span class="Big-wireless upperCase lineheight2 fw-bolder fs-poppins block fs-300 blod-900 d-block">Wirless </span ><span class="upperCase text-light lineheight2 fw-bolder Headphone">Headphone</span></h1>
          <img src="imgs/image1.png" class="w-100" alt="">
@@ -118,7 +118,7 @@
            
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+        </form>
   
       </div>
     </div>
@@ -141,8 +141,8 @@
   
   </div>
   </footer>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/CartCounter.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/CartCounter.js"></script>
 </body>
 </html>

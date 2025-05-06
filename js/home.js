@@ -56,6 +56,6 @@ async function getProducts(){
     return data.products;
 } 
 function redirectToProductDetails(productId){
-    window.location.href = `./show_details.html?id=${productId}`;
+    window.location.href = `pages/showDetails.html?id=${productId}`;
 
 }   
