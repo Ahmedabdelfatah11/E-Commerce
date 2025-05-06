@@ -18,8 +18,8 @@ async function viewProducts(){
         console.log(category);
         section.innerHTML = `   
             <div style="display-flex ">
-                <h2 class = "h2 categoryh2 text-center mt-5" style="font-size: 25px;font-weight: 600;">${category}</h2>
-                <a class = "align-baseline mx-4" href = "#"><strong class = "align-baseline">see more</strong></a>
+                <h2 class = "h2 categoryh2 text-center mt-5" style="font-size: 25px;font-weight: 600;">${capitalizeFirstLetter(category)}</h2>
+                <a class = "align-baseline h4 mx-4" href = "#"><strong class = "align-baseline">see more</strong></a>
             </div>
             <div class="row p-4">
                 ${products.slice(0,4).map(product => `
@@ -68,6 +68,7 @@ function redirectToProductDetails(productId){
 
 }   
 
+// Used in the All Products Page
 function displayCategoryProducts(category){
     console.log(category);
     
@@ -77,6 +78,30 @@ function displayCategoryProducts(category){
     section.classList.add("container-fluid", "p-3"); 
     section.innerHTML = `
         <a href = "#"> ${category}</a>
+        <div class="row p-4">
+            ${currentDisplayed.map(product => `
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 align-items-stretch">
+                    <div class="card h-100">
+                        <img src="${product.image}" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h6 class="card-title text-truncate" style="max-height: 2rem; overflow: hidden;">${product.title}</h5>
+                            <p class="card-text">price: ${product.price} $</p>
+                            <button onclick="redirectToProductDetails(${product.id})" class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div> 
+            `).join('')}
+        </div>  
+    `;  
+    productsSections.appendChild(section);
+}
+
+function displayProducts(category){
+    productsSections.innerHTML = "";
+    let section = document.createElement("section");
+    section.classList.add("container-fluid", "p-3"); 
+    section.innerHTML = `
+        <h2 class="h3 m-0 text-primary">${capitalizeFirstLetter(category)}</h2>
         <div class="row p-4">
             ${currentDisplayed.map(product => `
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 align-items-stretch">
@@ -107,7 +132,7 @@ function search(query) {
         map.set(product.id, product);
       });
       currentDisplayed =  Array.from(map.values());
-      displayCurrentProducts("Result")
+      displayProducts("Result")
       document.querySelector("#products").scrollIntoView({ behavior: "smooth" });
     } 
   }
