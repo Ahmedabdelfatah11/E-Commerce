@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const productId = params.get("id"); 
     
     
-    let response = await fetch('https://fakestoreapi.in/api/products');
+    let response = await fetch('https://fakestoreapi.in/api/products?limit=150');
     let data = await response.json();
     let products = data.products;
     console.log(productId) 
@@ -75,28 +75,22 @@ document.addEventListener("DOMContentLoaded", async function() {
     cardButton.addEventListener("click", function() {
         
         const params = new URLSearchParams(window.location.search);
-        const productId = params.get("id");
-        
-        
+        const productId = params.get("id"); 
         let response = null;
-        let products = null;
-        
-        
+        let products = null; 
         async function addProductToCart() {
             
                 if (!response) {
-                    response = await fetch('https://fakestoreapi.in/api/products');
+                    response = await fetch('https://fakestoreapi.in/api/products?limit=150');
                     data = await response.json();
                     products = data.products;
                 }
-                
                 
                 const product = products.find(p => p.id == productId);
                 
                 if (!product) {
                     throw new Error("Product not found in API data");
                 }
-                
                 
                 const cartItem = {
                     ...product,   
@@ -133,4 +127,7 @@ for (var i = 0; i < button.length; i++) {
         var category = this.getAttribute('data-category');
         window.location.href = `../pages/Category.html?type=${category}`;
     };
-}
+}function redirectToProductDetails(productId){ 
+    window.location.href = `../pages/show_details.html?id=${productId}`;  
+    console.log(productId);
+} 

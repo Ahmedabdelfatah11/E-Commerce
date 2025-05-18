@@ -14,7 +14,7 @@ let cartItems = [];
 
 async function fetchProducts() {
     try {
-        let response = await fetch('https://fakestoreapi.in/api/products');
+        let response = await fetch('https://fakestoreapi.in/api/products?limit=150');
         let data = await response.json();
         apiProducts = data.products;
         console.log("Products loaded from API:", apiProducts.length);
@@ -26,28 +26,35 @@ async function fetchProducts() {
     }
 }
 
-
 function loadCartItems() {
     if (localStorage.getItem('cartItems')) {
-        cartItems = JSON.parse(localStorage.getItem('cartItems'));
-        
-        
-        cartItems = cartItems.map(cartItem => {
-            
-            const apiProduct = apiProducts.find(p => p.id == cartItem.id);
-            
-            if (apiProduct) {
-                
-                return {
-                    ...apiProduct,
-                    quantity: cartItem.quantity
-                };
+        let storedItems = JSON.parse(localStorage.getItem('cartItems'));
+        cartItems = [];
+
+        for (let i = 0; i < storedItems.length; i++) {
+            let cartItem = storedItems[i];
+            let matchedProduct = null;
+
+            for (let j = 0; j < apiProducts.length; j++) {
+                if (apiProducts[j].id == cartItem.id) {
+                    matchedProduct = apiProducts[j];
+                    break;
+                }
             }
-            
-            
-            return cartItem;
-        });
-        
+
+            if (matchedProduct != null) {
+                cartItems.push({
+                    id: matchedProduct.id,
+                    title: matchedProduct.title,
+                    price: matchedProduct.price,
+                    image: matchedProduct.image,
+                    quantity: cartItem.quantity
+                });
+            } else {
+                cartItems.push(cartItem);
+            }
+        }
+
         displayProducts();
     }
 }
@@ -57,8 +64,8 @@ function calculateTotals() {
     for (let item of cartItems) {
         subtotal += parseFloat(item.price) * parseInt(item.quantity);
     }
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('total').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = `$${subtotal}`;
+    document.getElementById('total').textContent = `$${subtotal}`;
 }
 
 
@@ -101,12 +108,7 @@ function addProduct() {
             cartItem.image = matchingProduct.image;
             addToCart(cartItem);
             saveAndRefresh();
-        } else {
-            
-            alert('Please select an image or choose a product from the API.');
-        }
-    } else {
-        alert('Please fill all product details.');
+        }  
     }
 }
 
@@ -155,10 +157,22 @@ function displayProducts() {
 
 
 function clearForm() {
-    if (productNameInput) productNameInput.value = '';
-    if (productPriceInput) productPriceInput.value = '';
-    if (productQuantityInput) productQuantityInput.value = '';
-    if (productImgInput) productImgInput.value = '';
+    if (productNameInput) {
+        productNameInput.value = '';
+        productNameInput.disabled = false;
+    }
+    if (productPriceInput) {
+        productPriceInput.value = '';
+        productPriceInput.disabled = false;
+    }
+    if (productQuantityInput) {
+        productQuantityInput.value = '';
+        productQuantityInput.disabled = false;
+    }
+    if (productImgInput) {
+        productImgInput.value = '';
+        productImgInput.disabled = false;
+    }
 }
 
 
@@ -181,52 +195,25 @@ function updateProduct(index) {
 }
 
 
-function updateProductData(index) {
-    
-    const productId = cartItems[index].id;
-    const apiProduct = apiProducts.find(p => p.id == productId);
-    
-    if (productImgInput && productImgInput.files.length > 0) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            if (apiProduct) {
-                
-                cartItems[index] = {
-                    ...apiProduct,
-                    title: productNameInput.value,
-                    price: parseFloat(productPriceInput.value),
-                    quantity: parseInt(productQuantityInput.value),
-                    image: e.target.result
-                };
-            } else {
-                
-                cartItems[index].title = productNameInput.value;
-                cartItems[index].price = parseFloat(productPriceInput.value);
-                cartItems[index].quantity = parseInt(productQuantityInput.value);
-                cartItems[index].image = e.target.result;
-            }
-            saveAndRefresh();
-        };
-        reader.readAsDataURL(productImgInput.files[0]);
-    } else {
-        if (apiProduct) {
-            
-            cartItems[index] = {
-                ...apiProduct,
-                title: productNameInput ? productNameInput.value : cartItems[index].title,
-                price: productPriceInput ? parseFloat(productPriceInput.value) : cartItems[index].price,
-                quantity: productQuantityInput ? parseInt(productQuantityInput.value) : cartItems[index].quantity
-            };
-        } else {
-            
-            if (productNameInput) cartItems[index].title = productNameInput.value;
-            if (productPriceInput) cartItems[index].price = parseFloat(productPriceInput.value);
-            if (productQuantityInput) cartItems[index].quantity = parseInt(productQuantityInput.value);
-        }
-        saveAndRefresh();
-    }
-}
+function updateProduct(index) {
+    const item = cartItems[index];
+
+    // Pre-fill only quantity
+    if (productQuantityInput)
+    productQuantityInput.value = item.quantity;
+
+    productNameInput.disabled = true;
+    productPriceInput.disabled = true;
+    productImgInput.disabled = true;
  
+    productQuantityInput.disabled = false; 
+
+    buttonAdd.classList.add('d-none');
+    buttonUpdate.classList.remove('d-none');
+    buttonUpdate.setAttribute('data-index', index);
+}
+
+
 function saveAndRefresh() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     displayProducts();
@@ -237,7 +224,7 @@ function saveAndRefresh() {
         buttonUpdate.classList.add('d-none');
     }
 }
- 
+
 if (buttonUpdate) {
     buttonUpdate.addEventListener('click', function (e) {
         e.preventDefault();

@@ -322,3 +322,7 @@ footer .list-unstyled li a:hover
 {
    background-color: #15161D !important;
 }
+#homeSec a{
+    text-decoration: none;
+    color: #fff;
+} 

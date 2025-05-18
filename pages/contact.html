@@ -14,134 +14,106 @@
 
   
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/about.css">
 
-  <style>
-    
-    .hover_blue:hover {
-      color: #007bff;
-    }
-    
-  </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-md fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">UltraWave</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link Categories" href="#"  data-category="laptop">laptop</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link Categories" href="#" data-category="mobile">Mobile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link Categories" href="#" data-category="gaming">Gaming</a></li> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link Categories" href="#" data-category="appliances">appliances</a></li> 
-          </li>
-        
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" id="searchButton"  type="submit">Search</button> 
-        </form>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../pages/contact.html">Contact Us</a>
-          </li>
+<body> 
+
+  <div id="navbar-container"></div>
+
+  <section class="container-fluid"  style="color: white; background-color: #15161D; margin-top: 30px;" data-aos="zoom-in" data-aos-once="true">
+   <div class=" container d-flex justify-content-between"  data-aos="zoom-out-up">
+    <div class="col-lg-6 col-md-8 mt-5" >
+      <h3 class="mt-5" >
+        GET IN TOUCH
+      </h3>
+      <h6  > YOU WANT TO GET IN TOUCH ? WE WOULD TO HERE FROM YOU </h6>
+    </div>
+    <div class="col-lg-6 col-md -8"  data-aos="fade-up-left">
+      <img src="../imgs/contact.jpg" alt="" style= "height: 400px; position: relative;right:  0; bottom: -20px;">
+    </div>
+   </div>
+  </section>
+  
+
+<section class="container mt-5" data-aos="fade-up-left" data-aos-once="true">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 py-5 mt-5">
+            <h1 class="mt-3">You tell us. We listen.</h1>
+            <p class="py-3">Cras elementum finibus lacus nec lacinia. Quisque non convallis nisl, eu condimentum sem. Proin dignissim libero lacus, ut eleifend magna vehicula et. Nam mattis est sed tellus.</p>
+        </div>
+        <div class="col-lg-6 col-md-8 " data-aos="fade-right">
+            <form>
+                <div class="mb-3">
+                   
+                    <input type="text" class="form-control py-3" id="example"  placeholder="Name">
+                   
+                  </div>
+                  <div class="mb-3">
+                  
+                    <input type="text" class="form-control py-3" id="example" placeholder="Subject" >
+                  
+                </div>
+                   
+                <div class="mb-3">
+                  
+                  <input type="email" class="form-control py-3" id="exampleInputEmail1" placeholder="Email">
+                  
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control py-3" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                    
+                  </div>
+               
+                <button type="submit" class="btn btn-primary mt-5" style="background-color: #D10024e6; color:white">Submit</button>
+              </form>
           
-        </ul>
-        <!-- start cart --> 
-        <a href="pages/Cart.html" class="btn btn-primary position-relative ms-2">
-        <i class="fa fa-shopping-cart"></i> Cart
-        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-        </a>
-        <!-- end cart --> 
-      </div>
+        </div>
     </div>
-  </nav>
-  <section class="container Contact my-5 mt-5" data-aos="fade-right">
-    <h3 class="text-center mb-4 p-5">We're here to help.</h3>
-    <div class="row justify-content-center g-4">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <h4>Sales</h4>
-            <p class="text-secondary">For sales inquiries, call us anytime.</p>
-            <p class="text-primary">1800 123 4567</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <h4>Support</h4>
-            <p class="text-secondary">We’re here to support you 24/7.</p>
-            <p class="text-primary">1800 123 4567</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <h4>Returns</h4>
-            <p class="text-secondary">Email us about returns and refunds.</p>
-            <p class="text-primary">returns@mail.com</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <h4>Marketing</h4>
-            <p class="text-secondary">Partner with our marketing team.</p>
-            <p class="text-primary">1700 444 5578</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="container mt-5">
-    <div class="row align-items-center">
-      <div class="col-12 col-lg-6 py-3">
-        <h1>You tell us. We listen.</h1>
-        <p class="py-3">Cras elementum finibus lacus nec lacinia. Quisque non convallis nisl, eu condimentum sem. Proin dignissim libero lacus, ut eleifend magna vehicula et. Nam mattis est sed tellus.</p>
-      </div>
-      <div class="col-12 col-lg-6" data-aos="fade-right">
-        <form>
-          <div class="mb-3">
-            <input type="text" class="form-control py-3" placeholder="Name">
-          </div>
-          <div class="mb-3">
-            <input type="text" class="form-control py-3" placeholder="Subject">
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control py-3" placeholder="Email">
-          </div>
-          <div class="form-floating mb-3">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-            <label for="floatingTextarea2">Message</label>
-          </div>
-          <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  
+</section>
 <hr>
-<section class="preFooter container text-center py-5" data-aos="fade-up">
+<section class="container "  data-aos="fade-right" data-aos-once="true">
+
+  <div class="row ">
+      <div class="card col-lg-2 col-md-4  m-5">
+       
+      <div class="card-body">
+          <h4>Complaints</h4>
+       <p class="text-secondary"> This is some text within  .</p>
+      <p  class="text-primary">1800 123 4567</p>
+      </div>
+    </div>
+    <div class="card col-lg-2 col-md-4 m-5">
+       
+    
+
+    <div class="card-body">
+      <h4>Sales</h4>
+   <p  class="text-secondary"> This is some text within .</p>
+  <p  class="text-primary">1800 123 4567</p>
+  </div>
+</div>
+<div class="card col-lg-2 col-md-4  m-5">
+   
+  
+<div class="card-body">
+  <h4>Returns</h4>
+<p class="text-secondary" > This is some text within </p>
+<p class="text-primary">returns@mail.com</p>
+</div>
+</div>
+<div class="card col-lg-2 col-md-4 m-5">
+
+<div class="card-body">
+  <h4>Marketing</h4>
+<p class="text-secondary"> This is some text within</p>
+<p class="text-primary">1700 444 5578</p>
+</div>
+</div></div>
+
+</section>
+<hr>
+<section class="preFooter container text-center py-5" data-aos="fade-up" data-aos-once="true">
   <h3 class="hover_blue" style="cursor: pointer;">SALE UP It elit tellus, luctus nec ullamcorper  mattis, pulvinar dapibus leo</h3>
  
 </section>
@@ -149,58 +121,77 @@
 <hr>
 
 
-<footer class="bg-light pt-4" data-aos="fade-right" >
-  <div class="container">
-    <div class="row text-center text-md-start">
-      <div class="col-md-4 mb-3">
-        <h5>The best look anytime, anywhere.</h5>
-      </div>
-      <div class="col-md-2 mb-3">
-        <h6>For Her</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-dark text-decoration-none">Women Jeans</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Tops and Shirts</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Women Jackets</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Heels and Flats</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Accessories</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 mb-3">
-        <h6>For Him</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-dark text-decoration-none">Men Jeans</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Men Shirts</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Men Shoes</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Accessories</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Jackets</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h6>Subscribe</h6>
-        <form>
-          <input type="email" class="form-control mb-2 " placeholder="E-mail">
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
-      </div>
+<footer class="px-5">
+  <div class="container-fluid  mt-2 py-5">
+  <div class="row">
+    <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+      <h5 class="">The best look anytime, anywhere</h5>
     </div>
-    <hr>
-    <div class="row text-center">
-      <div class="col-md-6">
-        <p class="mb-0">© 2025 Brandstore. Powered by ITI.</p>
-      </div>
-      <div class="col-md-6 fs-5">
-        <i class="bi bi-facebook px-2"></i>
-        <i class="bi bi-youtube px-2"></i>
-        <i class="bi bi-twitter px-2"></i>
-        <i class="bi bi-instagram px-2"></i>
-        <i class="bi bi-google px-2"></i>
-      </div>
+    <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3"><h6>Laptops & Mobile</h6>
+      <ul class="list-unstyled">
+        <li><a href="#" class=" text-decoration-none">Gaming Laptops</a></li>
+        <li><a href="#" class=" text-decoration-none py-3">Ultrabooks</a></li>
+        <li><a href="#" class=" text-decoration-none">Android Phones</a></li>
+        <li><a href="#" class=" text-decoration-none py-3">iPhones</a></li>
+        <li><a href="#" class=" text-decoration-none">Laptop Accessories</a></li>
+     
+      </ul>
+
+    </div>
+    <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+      <h6>Gaming & Appliances</h6>
+      <ul class="list-unstyled">
+        <li><a href="#" class=" text-decoration-none">Gaming Consoles</a></li>
+        <li><a href="#" class=" text-decoration-none">Gaming Headsets</a></li>
+        <li><a href="#" class=" text-decoration-none">Smart TVs</a></li>
+        <li><a href="#" class=" text-decoration-none">Home Appliances</a></li>
+        <li><a href="#" class=" text-decoration-none">Speakers & Audio Systems</a></li>
+     
+      </ul>
+    </div>
+    <div class="col-md-3 text-md-start text-center my-md-2 px-5 my-3">
+      <h6>Subscribe</h6>
+      <form>
+        <div class="mb-3 ">
+          
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+         
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
     </div>
   </div>
+</div>
+<hr>
+
+<div class="container">
+  <div class="row">
+   <div class="col-6 ">Copyright © 2025 Brandstore. Powered by ITI.</div>
+   <div class="col-6 " style="font-size: 20px;">
+
+    <i style=" color: #fff;" class="bi bi-facebook px-3"></i>
+    <i class="fa-brands fs-2 fa-youtube"></i>
+    <i class="fa-brands fs-2 fa-x-twitter px-3"></i>
+    <i class="fa-brands fs-2 fa-instagram "></i>
+    <i class="fa-brands fs-2 fa-google ps-3"></i>
+   </div>
+  </div>
+  
+
+</div>
 </footer>
+<script src="/js/navbar.js"></script>
+<script>
+  fetch("/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("navbar-container").innerHTML = html;
+      attachNavbarEvents();
+    });
+</script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="../js/contact.js"></script>
-
 <script>
   AOS.init();
 </script>
